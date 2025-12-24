@@ -216,7 +216,8 @@ Please refer to the file below for the full set of estimated coefficients: [`her
 ---
 ## Code Files
 
-Please refer to the Python code file: [`here`](Notebooks/)
+Please refer to the Python code file: [`here`](notebooks/)
+
 ---
 > [!Note]
 > The Input data or any details cannot be made public as this project was carried out in collaboration with Professor and Team. We are thankfull for providing us with the problem statement and the required data.
