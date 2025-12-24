@@ -131,19 +131,6 @@ The interaction term captures how **simultaneous boarding and alighting affects 
 
 ---
 
-## 🚀 Contributions and Impact
-
-This project demonstrates how **trajectory-based pedestrian analytics** can:
-
-- Improve dwell time prediction accuracy
-- Enable door-level passenger flow analysis
-- Support dynamic passenger management strategies
-- Inform platform layout and infrastructure design decisions
-
-The study highlights the importance of **dynamic, time-sensitive modeling** in public transportation systems.
-
----
-
 ## 🔮 Future Work
 
 - Extend the framework for **real-time dwell time prediction**
