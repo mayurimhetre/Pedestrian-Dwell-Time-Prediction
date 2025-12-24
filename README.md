@@ -142,7 +142,7 @@ For each train stop and door, the following features were extracted:
 
 The dwell time (`y`) of a train at a station is estimated using a linear regression model based on the number of boarding and alighting passengers.
 
-### Model 1: Additive Linear Model
+### Model 1: Linear regression model with boarding and alighting passengers count
 
 This model assumes that boarding and alighting passengers independently contribute to the dwell time.
 
@@ -160,7 +160,7 @@ Where:
 - `coef_boarding` — effect of boarding passengers
 - `coef_alighting` — effect of alighting passengers
 
-### Model 2: Linear Model with Interaction Term
+### Model 2: Linear Regression Model with Interaction Term
 
 To account for the combined impact of simultaneous boarding and alighting, an interaction term is included.
 
