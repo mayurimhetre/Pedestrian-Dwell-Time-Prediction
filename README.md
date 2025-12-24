@@ -32,8 +32,11 @@ The dataset includes:
 - x, y, z coordinates  
 
 ### Platform Information
-- Platform boundaries
-- Platform edges corresponding to train doors
+Defines spatial layout of platform and obstacles
+Columns include:
+ - x-coordinate
+ - y-coordinate
+ - Description (e.g., Bahnsteig, Treppe)
 
 ---
 ## Exploratory Data Analysis
@@ -75,6 +78,7 @@ Identified 9 doors on the upper edge and  10 doors on the lower edge of the plat
 ![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/door_positions.png)
 
 ### 5. Passanger count during peak period (8 am to 9 am)
+It was observed that more passengers were alighting than boarding during the peak period
 
 ![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/passanger_count.png)
 
@@ -87,24 +91,7 @@ Identified 9 doors on the upper edge and  10 doors on the lower edge of the plat
 
 ---
 
-### 2️⃣ Train Arrival and Dwell Time Identification
-- Detected train arrivals using changes in pedestrian density and movement
-- Segmented data into:
-  - Pre-arrival
-  - Boarding/alighting (dwell period)
-  - Post-departure
-- Computed dwell time based on active passenger movement duration
-
----
-
-### 3️⃣ Boarding Zone and Door Detection
-- Applied **K-Means clustering** on pedestrian positions near the platform edge
-- Identified train door locations
-- Assigned **door IDs** to pedestrian movements for door-level analysis
-
----
-
-### 4️⃣ Passenger Movement Classification
+### 2️⃣ Passenger Movement Classification
 
 Two approaches were implemented:
 
@@ -117,10 +104,16 @@ Two approaches were implemented:
 - Used **Gaussian Kernel Density Estimation (KDE)** to detect high-density movement regions
 - Measurement lines adapted dynamically to pedestrian behavior
 - More effective in capturing real-world boarding and alighting patterns
+---
+
+### 3️⃣ Boarding Zone and Door Detection
+- Applied **K-Means clustering** on pedestrian positions near the platform edge
+- Identified train door locations
+- Assigned **door IDs** to pedestrian movements for door-level analysis
 
 ---
 
-### 5️⃣ Dataset Preparation
+### 4️⃣ Final Dataset Preparation for Predictive Modelling
 For each train stop and door, the following features were extracted:
 
 - Train timestamp
@@ -133,7 +126,7 @@ For each train stop and door, the following features were extracted:
 
 ---
 
-### 6️⃣ Dwell Time Prediction
+### 5️⃣ Dwell Time Prediction
 
 The dwell time (\(y\)) for a train stop is modeled using a **linear regression** based on the number of boarding and alighting passengers:
 
