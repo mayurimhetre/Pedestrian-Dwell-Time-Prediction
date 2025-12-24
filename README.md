@@ -23,15 +23,15 @@ The key objectives of this project are:
 ---
 
 ## Table of Contents
-- [Input Raw Dataset Description](#Input-Raw-Dataset-Description)
+- [Input Dataset Description](#Input-Dataset-Description)
 - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
-- [Data Description](#data-description)
+- [Implementation](#Implementation)
 - [Results](#results)
 - [Key Findings](#Key-Findings)
 - [Future work](#Fuuture-work)
 
 
-## Input Raw Dataset Description
+## Input Dataset Description
 
 The dataset includes:
 
@@ -91,7 +91,7 @@ It was observed that more passengers were alighting than boarding during the pea
 
 ![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/passanger_count.png)
 
-## Methodology
+## Implementation
 
 ### 1️⃣ Data Preprocessing
 - Filtered trajectories to relevant time windows around train arrivals
