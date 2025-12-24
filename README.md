@@ -54,6 +54,9 @@ Columns include:
 
 Input raw data contains informationf for specific Date & Time: November 2, 2021, from 1:00 a.m. to 11:00 p.m
 Dwell periods are distributed unevenly over time.
+> ⚠️ **Important:**  
+> This dataset does **not** contain train timetable information or door position metadata.  
+> All train timings and door locations used in this project are **inferred from passenger movement behavior**.
 
 ### 2. Platform Layout
 
