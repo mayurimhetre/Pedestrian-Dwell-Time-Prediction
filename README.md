@@ -9,6 +9,36 @@ Using spatiotemporal movement data, the study identifies boarding zones, classif
 
 ---
 
+# Train Dwell Time Modeling
+
+## Overview
+Brief description of the project and its purpose.
+
+## Dwell Time Regression Model
+Explanation of how dwell time is modeled.
+
+### Model 1: Additive Linear Model
+Description of the baseline linear regression model.
+
+### Model 2: Linear Model with Interaction Term
+Description of the extended model with interaction effects.
+
+## Data Description
+Information about the input data and variables.
+
+## Results
+Summary of model performance and findings.
+
+## Usage
+Instructions on how to run the code.
+
+## License
+Project license information.
+
+
+[Model 1](#model-1-additive-linear-model)
+
+
 ## 🎯 Project Objectives
 
 The key objectives of this project are:
@@ -136,9 +166,9 @@ This model assumes that boarding and alighting passengers independently contribu
 
 Formula:
 
-y = intercept
-    + coef_boarding  * N_boarding
-    + coef_alighting * N_alighting
+    y = intercept
+        + coef_boarding  * N_boarding
+        + coef_alighting * N_alighting
 
 Where:
 - `y` — dwell time at the station
@@ -162,22 +192,11 @@ Formula:
 Where:
 - `coef_interaction` captures the additional dwell time caused by concurrent boarding and alighting activity
 
-This extended model better reflects real-world station operations, where high volumes of both boarding and alighting passengers can increase dwell time disproportionately.
-
-
-Where:
-- N_boarding = Number of boarding passengers
-- N_alighting = Number of alighting passengers
-- coef_boarding, coef_alighting, coef_interaction = Model coefficients
-- intercept = Regression intercept
-
-
 The interaction term captures how **simultaneous boarding and alighting affects dwell time**.
 
 **Performance metrics** used to evaluate the model include:  
 - **Root Mean Squared Error (RMSE)** – measures the average prediction error in the same units as dwell time  
 - **Mean Absolute Percentage Error (MAPE)** – measures prediction accuracy as a percentage
-
 
 ---
 
