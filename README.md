@@ -28,7 +28,7 @@ The key objectives of this project are:
 - [Implementation](#Implementation)
 - [Results](#results)
 - [Key Findings](#Key-Findings)
-- [Future work](#Fuuture-work)
+- [Future work](#Future-work)
 
 
 ## Input Dataset Description
