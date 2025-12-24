@@ -5,7 +5,7 @@
 Understanding pedestrian boarding and alighting behavior is crucial for optimizing public transportation systems.  
 This project focuses on **analyzing pedestrian trajectory data from a train platform** to **simulate boarding processes and predict train dwell times**.
 
-Using high-resolution spatiotemporal movement data, the study identifies boarding zones, classifies passenger movements, and models dwell time as a function of passenger flow dynamics. Both **static and dynamic measurement approaches** are evaluated to capture real-world pedestrian behavior more accurately.
+Using spatiotemporal movement data, the study identifies boarding zones, classifies passenger movements, and models dwell time as a function of passenger flow dynamics. Both **static and dynamic measurement approaches** are evaluated to capture real-world pedestrian behavior more accurately.
 
 ---
 
@@ -30,17 +30,11 @@ The dataset includes:
 ### Pedestrian Trajectory Data
 - Pedestrian ID  
 - Timestamp / frame number (4 FPS)  
-- x, y coordinates  
-- Height (used as a quality indicator)
+- x, y, z coordinates  
 
 ### Platform Information
 - Platform boundaries
 - Platform edges corresponding to train doors
-
-### Temporal Metadata
-- Time windows covering train arrival, dwell, and departure phases
-
-The high spatial and temporal resolution allows detailed analysis of boarding and alighting dynamics at the door level.
 
 ---
 
@@ -48,9 +42,8 @@ The high spatial and temporal resolution allows detailed analysis of boarding an
 
 ### 1️⃣ Data Preprocessing
 - Filtered trajectories to relevant time windows around train arrivals
-- Removed noise and short-lived detections
+- Removed steady and short-lived detections
 - Mapped pedestrian positions to platform coordinates
-- Reduced dataset size by focusing on active boarding periods
 
 ---
 
@@ -76,7 +69,7 @@ The high spatial and temporal resolution allows detailed analysis of boarding an
 Two approaches were implemented:
 
 #### 🔹 Static Measurement Lines
-- Fixed lines near the platform edge
+- Fixed lines near the platform edge (approx. 1.5 meters from the platform edge)
 - Classified passengers based on crossing direction
 - Simple but limited in adaptability
 
@@ -99,13 +92,25 @@ For each train stop and door, the following features were extracted:
 ---
 
 ### 6️⃣ Dwell Time Prediction
-- Built **linear regression models** to predict dwell time
-- Evaluated models across:
-  - Different platform edges
-  - Different time windows
-- Performance metrics:
-  - Root Mean Squared Error (RMSE)
-  - Mean Absolute Percentage Error (MAPE)
+
+The dwell time (\(y\)) for a train stop is modeled using a **linear regression** based on the number of boarding and alighting passengers:
+
+\[
+y = \text{intercept} + \beta_\text{boarding} \cdot N_\text{boarding} + \beta_\text{alighting} \cdot N_\text{alighting} + \beta_\text{interaction} \cdot (N_\text{boarding} \cdot N_\text{alighting})
+\]
+
+Where:  
+- \(N_\text{boarding}\) = Number of boarding passengers  
+- \(N_\text{alighting}\) = Number of alighting passengers  
+- \(\beta_\text{boarding}, \beta_\text{alighting}, \beta_\text{interaction}\) = Model coefficients  
+- \(\text{intercept}\) = Regression intercept
+
+The interaction term captures how **simultaneous boarding and alighting affects dwell time**.
+
+**Performance metrics** used to evaluate the model include:  
+- **Root Mean Squared Error (RMSE)** – measures the average prediction error in the same units as dwell time  
+- **Mean Absolute Percentage Error (MAPE)** – measures prediction accuracy as a percentage
+
 
 ---
 
