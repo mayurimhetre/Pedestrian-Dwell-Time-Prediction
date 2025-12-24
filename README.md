@@ -23,7 +23,7 @@ The key objectives of this project are:
 
 ---
 
-## 🗂️ Dataset Description
+## 🗂️ Input Raw Dataset Description
 
 The dataset includes:
 
@@ -37,6 +37,12 @@ The dataset includes:
 - Platform edges corresponding to train doors
 
 ---
+## Data Analysis
+
+### 1. Platform information
+
+This is how platform looks like in top view
+![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/platform_top_view.png)
 
 ## 🔍 Methodology
 
