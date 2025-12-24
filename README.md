@@ -80,14 +80,16 @@ Two approaches were implemented:
 
 ---
 
-### 5️⃣ Feature Engineering
+### 5️⃣ Dataset Preparation
 For each train stop and door, the following features were extracted:
 
+- Train timestamp
+- Train ID
+- Door ID
 - Number of boarding passengers  
 - Number of alighting passengers  
-- Interaction term (boarding × alighting)  
-- Platform edge / door ID  
-- Time window indicators (low vs high crowd periods)
+- Interaction term (no_of_boarding_passangers * no_of_alighting_passangers)  
+- Dwell Time (in seconds)
 
 ---
 
