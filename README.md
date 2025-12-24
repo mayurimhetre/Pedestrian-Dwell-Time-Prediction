@@ -22,6 +22,28 @@ The key objectives of this project are:
 
 ---
 
+## Table of Contents
+- [Overview](#overview)
+- [Dwell Time Regression Model](#dwell-time-regression-model)
+  - [Model 1: Additive Linear Model](#model-1-additive-linear-model)
+  - [Model 2: Linear Model with Interaction Term](#model-2-linear-model-with-interaction-term)
+- [Data Description](#data-description)
+- [Results](#results)
+- [Usage](#usage)
+- [License](#license)
+
+
+## Results
+
+The results of the dwell time regression models are provided in a CSV file containing the estimated coefficient values.
+
+Please refer to the file below for the full set of estimated coefficients:
+
+- [`results/dwell_time_coefficients.csv`](Results/Dwell_time_prediction.csv)
+
+This file can be used for further analysis, validation, or direct integration into downstream modeling and simulation workflows.
+
+
 ## 🗂️ Input Raw Dataset Description
 
 The dataset includes:
