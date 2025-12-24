@@ -23,28 +23,15 @@ The key objectives of this project are:
 ---
 
 ## Table of Contents
-- [Overview](#overview)
-- [Dwell Time Regression Model](#dwell-time-regression-model)
-  - [Model 1: Additive Linear Model](#model-1-additive-linear-model)
-  - [Model 2: Linear Model with Interaction Term](#model-2-linear-model-with-interaction-term)
+- [Input Raw Dataset Description](#Input-Raw-Dataset-Description)
+- [Exploratory Data Analysis](#Exploratory-Data-Analysis)
 - [Data Description](#data-description)
 - [Results](#results)
-- [Usage](#usage)
-- [License](#license)
+- [Key Findings](#Key-Findings)
+- [Future work](#Fuuture-work)
 
 
-## Results
-
-The results of the dwell time regression models are provided in a CSV file containing the estimated coefficient values.
-
-Please refer to the file below for the full set of estimated coefficients:
-
-- [`results/dwell_time_coefficients.csv`](Results/Dwell_time_prediction.csv)
-
-This file can be used for further analysis, validation, or direct integration into downstream modeling and simulation workflows.
-
-
-## 🗂️ Input Raw Dataset Description
+## Input Raw Dataset Description
 
 The dataset includes:
 
@@ -104,7 +91,7 @@ It was observed that more passengers were alighting than boarding during the pea
 
 ![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/passanger_count.png)
 
-## 🔍 Methodology
+## Methodology
 
 ### 1️⃣ Data Preprocessing
 - Filtered trajectories to relevant time windows around train arrivals
@@ -192,7 +179,13 @@ The interaction term captures how **simultaneous boarding and alighting affects 
 
 ---
 
-## 📊 Key Findings
+## Results
+
+The results of the dwell time regression models are provided in a CSV file containing the estimated coefficient values.
+
+Please refer to the file below for the full set of estimated coefficients: [`here`](Results/Dwell_time_prediction.csv)
+
+## Key Findings
 
 - Boarding passengers have a **stronger influence on dwell time** than alighting passengers
 - The interaction between boarding and alighting is **negative**, indicating reduced efficiency when both occur simultaneously
@@ -202,7 +195,7 @@ The interaction term captures how **simultaneous boarding and alighting affects 
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 - Extend the framework for **real-time dwell time prediction**
 - Integrate **train schedules, delays, and headways**
