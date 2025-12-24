@@ -1,6 +1,6 @@
 # 🚆 Dwell Time Prediction Using Pedestrian Trajectory Data
 
-## 📌 Project Overview
+## 📌 Project Overview 
 
 Understanding pedestrian boarding and alighting behavior is crucial for optimizing public transportation systems.  
 This project focuses on **analyzing pedestrian trajectory data from a train platform** to **simulate boarding processes and predict train dwell times**.
