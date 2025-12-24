@@ -9,36 +9,6 @@ Using spatiotemporal movement data, the study identifies boarding zones, classif
 
 ---
 
-# Train Dwell Time Modeling
-
-## Overview
-Brief description of the project and its purpose.
-
-## Dwell Time Regression Model
-Explanation of how dwell time is modeled.
-
-### Model 1: Additive Linear Model
-Description of the baseline linear regression model.
-
-### Model 2: Linear Model with Interaction Term
-Description of the extended model with interaction effects.
-
-## Data Description
-Information about the input data and variables.
-
-## Results
-Summary of model performance and findings.
-
-## Usage
-Instructions on how to run the code.
-
-## License
-Project license information.
-
-
-[Model 1](#model-1-additive-linear-model)
-
-
 ## 🎯 Project Objectives
 
 The key objectives of this project are:
