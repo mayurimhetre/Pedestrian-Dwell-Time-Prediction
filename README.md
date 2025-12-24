@@ -19,7 +19,6 @@ The key objectives of this project are:
 - Classify passengers as **boarding or alighting** using movement-based rules
 - Predict **train dwell time** using regression models
 - Compare **static vs dynamic (KDE-based)** passenger measurement methods
-- Provide actionable insights for **transport planning and infrastructure design**
 
 ---
 
