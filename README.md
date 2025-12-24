@@ -128,15 +128,42 @@ For each train stop and door, the following features were extracted:
 
 ### 5️⃣ Dwell Time Prediction
 
-The dwell time (\(y\)) for a train stop is modeled using a **linear regression** based on the number of boarding and alighting passengers:
+The dwell time (`y`) of a train at a station is estimated using a linear regression model based on the number of boarding and alighting passengers.
 
-Equation 1:
+### Model 1: Additive Linear Model
 
-y = intercept + coef_boarding * N_boarding + coef_alighting * N_alighting
+This model assumes that boarding and alighting passengers independently contribute to the dwell time.
 
-Equation 2:
+Formula:
 
-y = intercept + coef_boarding * N_boarding + coef_alighting * N_alighting + coef_interaction * (N_boarding * N_alighting)
+y = intercept
+    + coef_boarding  * N_boarding
+    + coef_alighting * N_alighting
+
+Where:
+- `y` — dwell time at the station
+- `N_boarding` — number of boarding passengers
+- `N_alighting` — number of alighting passengers
+- `intercept` — baseline dwell time
+- `coef_boarding` — effect of boarding passengers
+- `coef_alighting` — effect of alighting passengers
+
+### Model 2: Linear Model with Interaction Term
+
+To account for the combined impact of simultaneous boarding and alighting, an interaction term is included.
+
+Formula:
+
+    y = intercept
+        + coef_boarding    * N_boarding
+        + coef_alighting   * N_alighting
+        + coef_interaction * (N_boarding * N_alighting)
+
+Where:
+- `coef_interaction` captures the additional dwell time caused by concurrent boarding and alighting activity
+
+This extended model better reflects real-world station operations, where high volumes of both boarding and alighting passengers can increase dwell time disproportionately.
+
 
 Where:
 - N_boarding = Number of boarding passengers
