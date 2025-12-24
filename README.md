@@ -36,12 +36,47 @@ The dataset includes:
 - Platform edges corresponding to train doors
 
 ---
-## Data Analysis
+## Exploratory Data Analysis
 
-### 1. Platform information
+### 1. Pedestrian Trajectory Data
 
-This is how platform looks like in top view
+Input raw data contains informationf for specific Date & Time: November 2, 2021, from 1:00 a.m. to 11:00 p.m
+Dwell periods are distributed unevenly over time.
+
+### 2. Platform Layout
+
+The platform layout features a measurement line with plotted obstacles.
+Measurement line coordinates are adjusted using a 2-meter offset.
+Upper measurement line: 12.72 − 2 = 10.72
+Lower measurement line: −3.77 + 2 = −1.77
+
 ![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/platform_top_view.png)
+
+### 3. Passenger Trajectory Patterns: Boarding vs. Alighting
+Analyzes pedestrian trajectories within a 60-second window around the peak second (57748).
+Identifies individuals crossing the upper (y = 10.72) or lower (y = -1.77) platform boundaries.
+Determines crossing direction to classify each person as boarding or alighting.
+
+![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/alighting_passanger.png)
+
+Trajectory of an alighting passenger: movement from the train side to the platform side.
+
+![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/boarding_passanger.png)
+
+Trajectory of a boarding passenger: movement from the platform side to the train side.
+
+### 4. Identification of Train Door Positions:
+Peak time identified as 5:00 PM based on highest observed passenger density.
+Applies K-Means clustering to X-coordinates of pedestrian crossings at upper and lower platform edges.
+Uses the elbow method and silhouette score to determine the optimal number of clusters (door positions).
+Visualize cluster centers to infer train door locations.
+Identified 9 doors on the upper edge and  10 doors on the lower edge of the platform
+
+![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/door_positions.png)
+
+### 5. Passanger count during peak period (8 am to 9 am)
+
+![](https://github.com/mayurimhetre/Pedestrian-Dwell-Time-Prediction/blob/main/images/passanger_count.png)
 
 ## 🔍 Methodology
 
