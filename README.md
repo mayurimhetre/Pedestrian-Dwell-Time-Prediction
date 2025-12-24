@@ -95,15 +95,20 @@ For each train stop and door, the following features were extracted:
 
 The dwell time (\(y\)) for a train stop is modeled using a **linear regression** based on the number of boarding and alighting passengers:
 
-\[
-y = \text{intercept} + \beta_\text{boarding} \cdot N_\text{boarding} + \beta_\text{alighting} \cdot N_\text{alighting} + \beta_\text{interaction} \cdot (N_\text{boarding} \cdot N_\text{alighting})
-\]
+Equation 1:
 
-Where:  
-- \(N_\text{boarding}\) = Number of boarding passengers  
-- \(N_\text{alighting}\) = Number of alighting passengers  
-- \(\beta_\text{boarding}, \beta_\text{alighting}, \beta_\text{interaction}\) = Model coefficients  
-- \(\text{intercept}\) = Regression intercept
+y = intercept + coef_boarding * N_boarding + coef_alighting * N_alighting
+
+Equation 2:
+
+y = intercept + coef_boarding * N_boarding + coef_alighting * N_alighting + coef_interaction * (N_boarding * N_alighting)
+
+Where:
+- N_boarding = Number of boarding passengers
+- N_alighting = Number of alighting passengers
+- coef_boarding, coef_alighting, coef_interaction = Model coefficients
+- intercept = Regression intercept
+
 
 The interaction term captures how **simultaneous boarding and alighting affects dwell time**.
 
