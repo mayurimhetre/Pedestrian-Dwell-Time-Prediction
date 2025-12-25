@@ -1,4 +1,4 @@
-# 🚆 Dwell Time Prediction Using Pedestrian Trajectory Data
+# 🚆 Dwell Time Prediction Using Pedestrian Trajectory Data  
 
 ## 📌 Project Overview 
 
